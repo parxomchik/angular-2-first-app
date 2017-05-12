@@ -17,7 +17,13 @@ import { AppComponent }  from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule
+    RouterModule.forRoot([
+     { path: 'products', component: ProductListComponent },
+     { path: 'product/:id', component: ProductDetailComponent },
+     { path: 'welcome', component: WelcomeComponent },
+     { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+     { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
+    ])
   ],
   declarations: [
     AppComponent,
