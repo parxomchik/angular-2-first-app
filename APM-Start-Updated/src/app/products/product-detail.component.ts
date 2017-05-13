@@ -1,5 +1,5 @@
-import { Component} from '@angular/core';
-// import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 // import { Subscription }       from 'rxjs/Subscription';
 
@@ -7,7 +7,8 @@ import { IProduct } from './product';
 // import { ProductService } from './product.service';
 
 @Component({
-    templateUrl: 'app/products/product-detail.component.html'
+    moduleId: module.id,
+    templateUrl: 'product-detail.component.html'
 })
 export class ProductDetailComponent {
     pageTitle: string = 'Product Detail';
@@ -15,7 +16,12 @@ export class ProductDetailComponent {
     errorMessage: string;
     // private sub: Subscription;
 
-    constructor() {
+    constructor( private _route: ActivatedRoute) {
     }
 
+    ngOnInit(): void {
+        console.log(111);
+        let id = +this._route.snapshot.params['id'];
+        this.pageTitle += `: ${id}`;
+    }
 }
