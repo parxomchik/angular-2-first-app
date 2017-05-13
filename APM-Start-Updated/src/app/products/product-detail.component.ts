@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 
 // import { Subscription }       from 'rxjs/Subscription';
 
@@ -10,18 +10,22 @@ import { IProduct } from './product';
     moduleId: module.id,
     templateUrl: 'product-detail.component.html'
 })
-export class ProductDetailComponent {
+export class ProductDetailComponent implements OnInit {
     pageTitle: string = 'Product Detail';
     product: IProduct;
     errorMessage: string;
     // private sub: Subscription;
 
-    constructor( private _route: ActivatedRoute) {
+    constructor( private _route: ActivatedRoute,
+                 private _router: Router) {
     }
 
     ngOnInit(): void {
-        console.log(111);
         let id = +this._route.snapshot.params['id'];
         this.pageTitle += `: ${id}`;
+    }
+
+    onBack(): void {
+        this._router.navigate(['/products']);
     }
 }
