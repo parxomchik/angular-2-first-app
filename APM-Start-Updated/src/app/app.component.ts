@@ -1,4 +1,3 @@
-import { ProductService } from './products/product.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -16,8 +15,7 @@ import { Component } from '@angular/core';
         <div class='container'>
             <router-outlet></router-outlet>
         </div>
-    </div>`,
-    providers: [ProductService]
+    </div>`
 })
 
 export class AppComponent {
