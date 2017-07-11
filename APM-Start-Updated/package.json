@@ -8,8 +8,7 @@
     "build:watch": "tsc -p src/ -w",
     "serve": "lite-server -c=bs-config.json",
     "prestart": "npm run build",
-     "start": "node Server.js",
-    // "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
+    "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
     "preinstall": "npm install -g http-server",
     "postinstall": "ng build --aot -prod&& mv dist/* .",
     "lint": "tslint ./src/**/*.ts -t verbose"
