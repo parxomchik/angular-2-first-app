@@ -8,7 +8,8 @@
     "build:watch": "tsc -p src/ -w",
     "serve": "lite-server -c=bs-config.json",
     "prestart": "npm run build",
-    "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
+     "start": "node Server.js",
+    // "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
     "preinstall": "npm install -g http-server",
     "postinstall": "ng build --aot -prod&& mv dist/* .",
     "lint": "tslint ./src/**/*.ts -t verbose"
@@ -39,10 +40,6 @@
     "tslint": "^3.15.1",
     "rimraf": "^2.5.4",
     "@types/node": "^6.0.46"
-  },
-  "engines": {
-    "node": "6.10.0",
-    "npm": "3.8.5"
   },
   "repository": {}
 }
