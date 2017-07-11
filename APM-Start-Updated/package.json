@@ -9,12 +9,13 @@
     "serve": "lite-server -c=bs-config.json",
     "prestart": "npm run build",
     "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
-    "postinstall": "ng build --aot -prod",
+    "preinstall": "npm install -g http-server",
+    "postinstall": "ng build --aot -prod&& mv dist/* .",
     "lint": "tslint ./src/**/*.ts -t verbose"
   },
   "license": "ISC",
   "dependencies": {
-    "@angular/cli": "~1.2",
+    "@angular/cli": "~1.2.0",
     "@angular/common": "~4.0.0",
     "@angular/compiler": "~4.0.0",
     "@angular/core": "~4.0.0",
