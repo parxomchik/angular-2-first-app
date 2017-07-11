@@ -9,7 +9,6 @@
     "serve": "lite-server -c=bs-config.json",
     "prestart": "npm run build",
     "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
-    "preinstall": "npm install -g http-server",
     "postinstall": "ng build --aot -prod&& mv dist/* .",
     "lint": "tslint ./src/**/*.ts -t verbose"
   },
